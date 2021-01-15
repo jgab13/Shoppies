@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Shoppies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Shoppies is a simple web app that uses the OMDB API to search IMDB for movies based on keyword search. The user can nominate up to 5 movies. This app uses react, jsx and js.
 
 ## Available Scripts
 
