@@ -1,0 +1,18 @@
+#movieInput {
+	width: 97%;
+	height: 25px;
+	font-size: inherit;
+	border: None;
+	float: right;
+}
+
+
+#BsSearch {
+	float: left;
+	padding-top: 0.5%;
+	background-color: white;
+}
+
+.Search {
+	margin-left: 3%;
+}
