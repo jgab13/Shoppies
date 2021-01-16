@@ -1,6 +1,6 @@
 # Shoppies
 
-Shoppies is a simple web app that uses the OMDB API to search IMDB for movies based on keyword search. The user can nominate up to 5 movies. This app uses react and js.
+Shoppies is a simple web app that uses the OMDB API to search for movies based on keyword search. The user can nominate up to 5 movies. This app uses react and js. Please use this URL to access the web app http://shoppies-jg.herokuapp.com/.
 
 ## Available Scripts
 
