@@ -2,14 +2,18 @@
 
 # dependencies
 /node_modules
+/client/node_modules
 /.pnp
 .pnp.js
 
 # testing
 /coverage
+/client/.eslintcache
+/client/debug.log
 
 # production
 /build
+/client/build
 
 # misc
 .DS_Store
