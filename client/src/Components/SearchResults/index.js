@@ -8,21 +8,11 @@ import SearchThumbnail from "./../SearchThumbnail";
 class SearchResults extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   searchFlag: this.props.searchFlag,
-    //   searchTerm: this.props.searchTerm,
-    //   searchResult: this.props.searchResult,
-    //   noms: this.props.noms
-    // }
   }
   
 
   render() {
     const {searchFlag, searchResult, searchTerm, noms, onClickHandler} = this.props;
-    console.log(searchFlag)
-    console.log(searchResult)
-    console.log(searchTerm)
-    console.log(noms)
 
     const title = searchFlag !== null && searchFlag && searchTerm !== null? <h2>Results for "{searchTerm}"</h2> : <h2>Results will be shown here</h2>;
     const results = searchFlag !== null && searchFlag && searchTerm !== null ? <ul>

@@ -5,3 +5,24 @@
 	border-radius: 5px;
 }
 
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #c3e6cb;
+  color: #666666;
+}
+
+.list {
+	padding: 10px;
+	margin-right: 50px;
+}
+
+.thumb {
+	width: 225px;
+	height: 225px;
+}
+
+
+.detail {
+	width: 220px;
+}

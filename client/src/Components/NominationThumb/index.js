@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./../SearchThumbnail/styles.css"
 
 class NominationThumb extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class NominationThumb extends React.Component {
     const {nom, onClickHandler} = this.props;
       return (
         <div>
-          {nom.Title} ({nom.Year}) <button className="button" onClick={(e) => onClickHandler(nom)}>Remove </button>
+          <li className="list"><img className="thumb" src={nom.Poster}/><br/><div className="detail">{nom.Title} ({nom.Year}) </div><br/><button className="button" onClick={(e) => onClickHandler(nom)}>Remove </button></li>
         </div>
       );  
     }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Alert from 'react-bootstrap/Alert'; 
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css'; 
 
 
@@ -15,7 +14,7 @@ function Banner() {
       </Alert>
     );
   }
-  return <Button onClick={() => setShow(true)}>Show Alert</Button>;
+  return <button className="button" onClick={() => setShow(true)}>Show Message</button>;
 }
 
 export default Banner;
