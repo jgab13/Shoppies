@@ -18,8 +18,8 @@ class Search extends React.Component {
     const {onChangeHandler} = this.props
       return (
         <div className="Search">
-            <div>Movie Title</div><br/>
-            <BsSearch id="BsSearch"/><input type="search" onChange={onChangeHandler} id="movieInput" placeholder="Enter movie title"/>
+            <div id="movieTitle">Movie Title</div>
+            <input type="search" onChange={onChangeHandler} id="movieInput" placeholder="Enter movie title"/>
         </div>
       );  
     }

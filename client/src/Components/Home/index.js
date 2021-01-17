@@ -6,9 +6,8 @@ import Search from "./../Search";
 import SearchResults from "./../SearchResults";
 import Nominations from "./../Nominations";
 import Banner from "./../Banner";
-// 
 
-/* Component for the Home page */
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -26,9 +25,6 @@ class Home extends React.Component {
     console.log(nom)
     console.log(event)
     let newNom = this.state.nominations
-    // if (newNom === null) {
-    //   newNom = []
-    // }
     newNom.push(nom)
     this.setState({
       nominations: newNom
@@ -102,11 +98,11 @@ class Home extends React.Component {
       return (
         <div className="home">
           {banner}
-          <h1 id="title">The Shoppies</h1>
-          <div className="search"><Search onChangeHandler={this.setSearchTerm}/></div>
-
-          <div className="search leftPane"><SearchResults onClickHandler={this.setNomination} searchFlag={this.state.searchFlag} searchTerm={this.state.searchTerm} searchResult={this.state.searchResult} noms={this.state.nominations}/></div>
-          <div className="search rightPane"><Nominations noms={this.state.nominations} onClickHandler={this.removeNomination}/></div>
+          
+          <h1>The Shoppies</h1>
+          <div className="searchHeader"><Search onChangeHandler={this.setSearchTerm}/></div>
+          <div className="leftPane"><SearchResults onClickHandler={this.setNomination} searchFlag={this.state.searchFlag} searchTerm={this.state.searchTerm} searchResult={this.state.searchResult} noms={this.state.nominations}/></div>
+          <div className="rightPane"><Nominations noms={this.state.nominations} onClickHandler={this.removeNomination}/></div>
         </div>
       );  
     }

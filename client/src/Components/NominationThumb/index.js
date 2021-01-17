@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
+import "./styles.css";
 
 class NominationThumb extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class NominationThumb extends React.Component {
     const {nom, onClickHandler} = this.props;
       return (
         <div>
-          {nom.Title} ({nom.Year}) <Button onClick={(e) => onClickHandler(nom)}>Remove </Button>
+          {nom.Title} ({nom.Year}) <button className="button" onClick={(e) => onClickHandler(nom)}>Remove </button>
         </div>
       );  
     }

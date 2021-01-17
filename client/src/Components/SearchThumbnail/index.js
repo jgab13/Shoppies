@@ -1,9 +1,6 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
+import "./styles.css";
 
-
-
-/* Component for the Home page */
 class SearchThumbnail extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +31,7 @@ class SearchThumbnail extends React.Component {
     console.log(noms)
     const flag = noms === null ? true: this.checkMovie(search, noms);
     console.log(flag)
-    const nomButton = noms === null ? <Button onClick={(e) => onClickHandler(search)}>Nominate</Button> : (flag ? <Button disabled>Nominate</Button> : <Button onClick={(e) => onClickHandler(search)}>Nominate</Button>); 
+    const nomButton = noms === null ? <button className="button" onClick={(e) => onClickHandler(search)}>Nominate</button> : (flag ? <button className="button" disabled>Nominate</button> : <button className="button" onClick={(e) => onClickHandler(search)}>Nominate</button>); 
       return (
         <div>
           <li>{search.Title} ({search.Year}) {nomButton}</li>
