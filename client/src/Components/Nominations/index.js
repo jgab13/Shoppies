@@ -11,7 +11,6 @@ constructor(props) {
 
   render() {
     const {noms, onClickHandler} = this.props
-    console.log(noms)
     const results = noms === null ? null : <ul>
             {noms.map(result => (
               <li><NominationThumb nom={result} onClickHandler={onClickHandler}/></li>

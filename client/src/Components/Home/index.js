@@ -21,9 +21,6 @@ class Home extends React.Component {
   }
 
   setNomination = (nom, event) => {
-    console.log("This is the nomination value = or at least it should be")
-    console.log(nom)
-    console.log(event)
     let newNom = this.state.nominations
     newNom.push(nom)
     this.setState({
@@ -32,9 +29,6 @@ class Home extends React.Component {
   }
 
   removeNomination = (nom, event) => {
-    console.log("In order to remove nominations")
-    console.log(nom)
-    console.log(event)
     let noms = this.state.nominations
     const index = noms.indexOf(nom);
     noms.splice(index, 1)
@@ -47,13 +41,11 @@ class Home extends React.Component {
   setSearchTerm = async (event) => {
     event.preventDefault()
     const value = event.target.value
-    console.log(this.state.searchTerm)
     const request = new Request("http://www.omdbapi.com/?s=" + value + "&type=movie&apikey=30851f8", {
         method: "GET"
     });
     const response = await fetch(request)
     const result = await response.json()
-    console.log(result)
   
     if (result.Response === "True"){
       const searchResult = [];
@@ -63,14 +55,11 @@ class Home extends React.Component {
         }
         
       }
-      console.log(searchResult)
       this.setState({
         searchTerm: value,
         searchFlag: true,
         searchResult: searchResult
       })
-      console.log(this.state.searchFlag)
-      console.log(this.state.searchResult)
     } else {
       //Error handling
       if (result.Response === "False"){
@@ -98,7 +87,6 @@ class Home extends React.Component {
       return (
         <div className="home">
           {banner}
-          
           <h1>The Shoppies</h1>
           <div className="searchHeader"><Search onChangeHandler={this.setSearchTerm}/></div>
           <div className="leftPane"><SearchResults onClickHandler={this.setNomination} searchFlag={this.state.searchFlag} searchTerm={this.state.searchTerm} searchResult={this.state.searchResult} noms={this.state.nominations}/></div>
