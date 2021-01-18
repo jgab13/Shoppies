@@ -1,12 +1,10 @@
 import React from "react";
 import "./styles.css";
-
 import { Redirect, withRouter } from 'react-router-dom';
 import Search from "./../Search";
 import SearchResults from "./../SearchResults";
 import Nominations from "./../Nominations";
 import Banner from "./../Banner";
-
 
 class Home extends React.Component {
   constructor(props) {
@@ -17,7 +15,6 @@ class Home extends React.Component {
       searchResult: [],
       nominations: []
     }
-    
   }
 
   setNomination = (nom, event) => {
@@ -49,11 +46,12 @@ class Home extends React.Component {
   
     if (result.Response === "True"){
       const searchResult = [];
-      for (let i =0; i < 5; i++){
+      for (let i =0; i < 6; i++){
         if (result.Search[i] !== undefined){
           searchResult.push(result.Search[i]);  
+        } else {
+          break;
         }
-        
       }
       this.setState({
         searchTerm: value,
@@ -61,26 +59,27 @@ class Home extends React.Component {
         searchResult: searchResult
       })
     } else {
-      //Error handling
-      if (result.Response === "False"){
+      if (result.Error === "Movie not found!"){
         this.setState({
-          searchTerm: "",
+          searchTerm: value,
+          searchFlag: "notFound",
+          searchResult: []
+        })
+      } else if (result.Error === "Too many results.") {
+        this.setState({
+          searchTerm: value,
+          searchFlag: "tooMany",
+          searchResult: []
+        })
+      } else {
+        this.setState({
           searchFlag: false,
           searchResult: []
         })
-        //Banner that says movie not found!
-      } else{
-        this.setState({
-          searchTerm: "",
-          searchFlag: false,
-          searchResult: []
-        })
-        //Banner that says too many results
-      }
+      }         
     }
 
   }
-
 
   render() {
       const banner = this.state.nominations.length === 5 ? <Banner/> : null;
