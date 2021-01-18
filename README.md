@@ -4,5 +4,4 @@ Shoppies is a simple web app that uses the OMDB API to search for movies based o
 
 This web app uses React, Node, JavaScript, CSS, Bootstrap and was deployed using heroku. 
 
-In order to run this run this app locally, run the following command from the root directory:
-`npm run build-run'.
+In order to run this run this app locally, run the following command from the root directory `npm run build-run'
