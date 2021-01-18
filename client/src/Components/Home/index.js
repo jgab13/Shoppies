@@ -5,6 +5,8 @@ import Search from "./../Search";
 import SearchResults from "./../SearchResults";
 import Nominations from "./../Nominations";
 import Banner from "./../Banner";
+import Confetti from 'react-confetti';
+// import useWindowSize from 'react-use/lib/useWindowSize';
 
 class Home extends React.Component {
   constructor(props) {
@@ -82,7 +84,8 @@ class Home extends React.Component {
   }
 
   render() {
-      const banner = this.state.nominations.length === 5 ? <Banner/> : null;
+      // const { width, height } = useWindowSize()
+      const banner = this.state.nominations.length === 5 ? <><Banner/><Confetti height={1800} numberOfPieces={1500} recycle={false}/></> : null;
       return (
         <div className="home">
           {banner}
